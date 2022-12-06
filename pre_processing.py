@@ -1,6 +1,7 @@
 # Author: Lee Taylor, ST Number: 190211479
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import numpy as np
 from os import walk
 
 
@@ -16,6 +17,10 @@ def pltimg(i):
 # >>> ['26.jpg', '26_19.jpg', '26_20.jpg', '26_21.jpg', '26_22.jpg', ..., '32_9.jpg']
 
 def traintest_data(debug=False):
+    ''' test_dict = {'mild': [...], 'moderate': [...], 'none': [...], 'very_mild': [...] }
+                      index len : 179, 12, 640, 448, (sum = 1279)
+                      each array is (208, 176) => (208, 176)
+    '''
     classes = ['mild', 'moderate', 'none', 'very_mild']
     # test_dict, train_dict = {'mild': [], ... }, { ... , 'very_mild': []}
     test_dict, train_dict = ({}), ({})
@@ -38,14 +43,32 @@ def normalize(dict, debug=False):
         for i,v in enumerate(arr):
             arr[i] = v/255
 
-def traintest_labels():
-    pass
+def arrayify():
+    # for i, arr in enumerate(test_dict.values()):
+    #     print(i, len(arr))
+    print("|test_image_mild_0|.shape =", test_dict['mild'][0].shape)
+    # nparr = np.array([])
+    # nparr = np.empty(shape=(0, 0), dtype=float, order='C')
+    matrix = []
+    for matrix in test_dict.values():
+        for i, arr in enumerate(matrix):
+            if i == 1: print(arr.shape)
+            # nparr = np.append(nparr, arr, axis=None)
+            np.stack(nparr, arr)
+            # matrix.append(arr)
+    print(nparr.shape)
+    print(nparr[0].shape)
+    np.array(matrix)
+    print(matrix.shape)
+    return nparr
 
 
 if __name__ == '__main__':
     ## Test loading, normalizing, and plotting image data
     test_dict, train_dict = traintest_data(debug=False)
     normalize(test_dict)
+
+    arrayify()
 
     ## DEBUG - PLOT BRAIN SCAN
     # for vec in list(test_dict.values())[0][0]: print(vec)

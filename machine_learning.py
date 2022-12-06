@@ -5,7 +5,7 @@ from pre_processing import *
 
 test_dict, train_dict = traintest_data()
 normalize(test_dict)
-
+train_images, test_images, labels = arrayify()
 
 
 model = models.Sequential()
