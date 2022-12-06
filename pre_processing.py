@@ -23,10 +23,11 @@ def traintest_data(debug=False):
         test_dict.update({class_:[]})
         train_dict.update({class_:[]})
     # Populate each array with image values
-    for class_, test_arr in zip(classes, test_dict.values()):
-        filenames = next(walk(f'Data/images/test/{class_}'), (None, None, []))[2]
-        for fn in filenames:
-            test_arr.append(mpimg.imread(f'Data/images/test/{class_}/{fn}'))
+    for datatype, dict_ in zip(['test', 'train'], [test_dict, train_dict]):
+        for class_, arr in zip(classes, dict_.values()):
+            filenames = next(walk(f'Data/images/{datatype}/{class_}'), (None, None, []))[2]
+            for fn in filenames:
+                arr.append(mpimg.imread(f'Data/images/{datatype}/{class_}/{fn}'))
     # Debug
     if debug:
         for arr in test_dict.values(): print(len(arr))
@@ -42,9 +43,16 @@ def traintest_labels():
 
 
 if __name__ == '__main__':
-    # Test loading, normalizing, and plotting image data
-    test_dict, train_dict = traintest_data()
+    ## Test loading, normalizing, and plotting image data
+    test_dict, train_dict = traintest_data(debug=False)
     normalize(test_dict)
-    for vec in list(test_dict.values())[0][0]: print(vec)
-    pltimg(list(test_dict.values())[0][0])
-    pass
+
+    ## DEBUG - PLOT BRAIN SCAN
+    # for vec in list(test_dict.values())[0][0]: print(vec)
+    # pltimg(list(test_dict.values())[0][0])
+
+    ## DEBUG - CHECK LENGTH OF DATASETS
+    # for value in test_dict.values():
+    #     print(len(value))
+    # for value in train_dict.values():
+    #     print(len(value))

@@ -8,6 +8,7 @@ Use a variety of machine learning techniques that classify the images.
 
 ...
 
+
 IMAGES - you will build deep learning classification models for MRI images
 
 What to submit?
