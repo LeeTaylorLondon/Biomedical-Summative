@@ -17,12 +17,10 @@ def pltimg(i):
 # >>> ['26.jpg', '26_19.jpg', '26_20.jpg', '26_21.jpg', '26_22.jpg', ..., '32_9.jpg']
 
 def traintest_data(debug=False):
-    ''' test_dict = {'mild': [...], 'moderate': [...], 'none': [...], 'very_mild': [...] }
+    """ test_dict = {'mild': [...], 'moderate': [...], 'none': [...], 'very_mild': [...] }
                       index len : 179, 12, 640, 448, (sum = 1279)
-                      each array is (208, 176) => (208, 176)
-    '''
+                      each array is (208, 176) => (208, 176) """
     classes = ['mild', 'moderate', 'none', 'very_mild']
-    # test_dict, train_dict = {'mild': [], ... }, { ... , 'very_mild': []}
     test_dict, train_dict = ({}), ({})
     for class_ in classes:
         test_dict.update({class_:[]})
@@ -43,39 +41,32 @@ def normalize(dict, debug=False):
         for i,v in enumerate(arr):
             arr[i] = v/255
 
-def arrayify():
-    # for i, arr in enumerate(test_dict.values()):
-    #     print(i, len(arr))
-    print("|test_image_mild_0|.shape =", test_dict['mild'][0].shape)
-    # nparr = np.array([])
-    # nparr = np.empty(shape=(0, 0), dtype=float, order='C')
-    matrix = []
-    for matrix in test_dict.values():
-        for i, arr in enumerate(matrix):
-            if i == 1: print(arr.shape)
-            # nparr = np.append(nparr, arr, axis=None)
-            np.stack(nparr, arr)
-            # matrix.append(arr)
-    print(nparr.shape)
-    print(nparr[0].shape)
-    np.array(matrix)
-    print(matrix.shape)
-    return nparr
+def dict_to_nparray(dict_, debug=False):
+    npm = np.empty((0, 208, 176))
+    for vec in dict_.values():
+        vec = np.array(vec)
+        npm = np.append(npm, vec, axis=0)
+    if debug: print(npm.shape)
+    return npm
+
+def images_to_labels(dict_, debug=False):
+    labels = np.empty(0)
+    for i,arr in enumerate(dict_.values()):
+        temp_labels = np.ones(shape=(len(arr))) * (i + 1)
+        labels = np.append(labels, temp_labels)
+    if debug: print(labels, labels.shape)
+    return labels
 
 
 if __name__ == '__main__':
     ## Test loading, normalizing, and plotting image data
-    test_dict, train_dict = traintest_data(debug=False)
-    normalize(test_dict)
+    test_dict_, train_dict_ = traintest_data(debug=False)
+    normalize(test_dict_)
+    normalize(train_dict_)
 
-    arrayify()
+    test_images  = dict_to_nparray(test_dict_, debug=True)
+    test_labels  = images_to_labels(test_dict_, debug=True)
+    train_images = dict_to_nparray(train_dict_, debug=True)
+    train_labels = images_to_labels(train_dict_, debug=True)
 
-    ## DEBUG - PLOT BRAIN SCAN
-    # for vec in list(test_dict.values())[0][0]: print(vec)
-    # pltimg(list(test_dict.values())[0][0])
 
-    ## DEBUG - CHECK LENGTH OF DATASETS
-    # for value in test_dict.values():
-    #     print(len(value))
-    # for value in train_dict.values():
-    #     print(len(value))

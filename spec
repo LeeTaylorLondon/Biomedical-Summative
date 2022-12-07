@@ -2,6 +2,7 @@ Use a variety of machine learning techniques that classify the images.
 * Manually build and tweak a CNN model
 * Perform transfer learning with VGGNet
 * Perform transfer learning with ResNet
+* Perform transfer learning with AlexNet
 * Create images with GAN and investigate similar options
 * Consider and experiment with other machine learning techniques
 

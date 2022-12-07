@@ -1,0 +1,81 @@
+C:\Users\b9021147\PycharmProjects\Biomedical-Summative\venv\Scripts\python.exe C:\Users\b9021147\PycharmProjects\Biomedical-Summative\machine_learning_example.py
+(1279, 208, 176)
+[1. 1. 1. ... 4. 4. 4.] (1279,)
+(5121, 208, 176)
+[1. 1. 1. ... 4. 4. 4.] (5121,)
+2022-12-07 18:52:58.986274: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 206, 174, 32)      320
+
+ max_pooling2d (MaxPooling2D  (None, 103, 87, 32)      0
+ )
+
+ conv2d_1 (Conv2D)           (None, 101, 85, 64)       18496
+
+ max_pooling2d_1 (MaxPooling  (None, 50, 42, 64)       0
+ 2D)
+
+ conv2d_2 (Conv2D)           (None, 48, 40, 64)        36928
+
+=================================================================
+Total params: 55,744
+Trainable params: 55,744
+Non-trainable params: 0
+_________________________________________________________________
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 206, 174, 32)      320
+
+ max_pooling2d (MaxPooling2D  (None, 103, 87, 32)      0
+ )
+
+ conv2d_1 (Conv2D)           (None, 101, 85, 64)       18496
+
+ max_pooling2d_1 (MaxPooling  (None, 50, 42, 64)       0
+ 2D)
+
+ conv2d_2 (Conv2D)           (None, 48, 40, 64)        36928
+
+ flatten (Flatten)           (None, 122880)            0
+
+ dense (Dense)               (None, 64)                7864384
+
+ dense_1 (Dense)             (None, 10)                650
+
+=================================================================
+Total params: 7,920,778
+Trainable params: 7,920,778
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+161/161 [==============================] - 105s 647ms/step - loss: 1.0343 - accuracy: 0.5343 - val_loss: 0.9869 - val_accuracy: 0.5285
+Epoch 2/10
+161/161 [==============================] - 101s 630ms/step - loss: 0.6077 - accuracy: 0.7374 - val_loss: 1.1538 - val_accuracy: 0.4957
+Epoch 3/10
+161/161 [==============================] - 101s 628ms/step - loss: 0.2581 - accuracy: 0.8975 - val_loss: 1.7123 - val_accuracy: 0.5567
+Epoch 4/10
+161/161 [==============================] - 101s 630ms/step - loss: 0.0845 - accuracy: 0.9729 - val_loss: 2.1257 - val_accuracy: 0.5887
+Epoch 5/10
+161/161 [==============================] - 108s 670ms/step - loss: 0.0232 - accuracy: 0.9945 - val_loss: 2.4797 - val_accuracy: 0.6083
+Epoch 6/10
+161/161 [==============================] - 101s 630ms/step - loss: 0.0173 - accuracy: 0.9947 - val_loss: 2.4989 - val_accuracy: 0.6192
+Epoch 7/10
+161/161 [==============================] - 101s 630ms/step - loss: 0.0032 - accuracy: 0.9998 - val_loss: 3.1760 - val_accuracy: 0.6216
+Epoch 8/10
+161/161 [==============================] - 101s 628ms/step - loss: 3.4328e-04 - accuracy: 1.0000 - val_loss: 3.7237 - val_accuracy: 0.6083
+Epoch 9/10
+161/161 [==============================] - 105s 650ms/step - loss: 1.8945e-04 - accuracy: 1.0000 - val_loss: 3.7877 - val_accuracy: 0.6083
+Epoch 10/10
+161/161 [==============================] - 101s 628ms/step - loss: 1.3562e-04 - accuracy: 1.0000 - val_loss: 3.9775 - val_accuracy: 0.6106
+[1. 1. 1. ... 4. 4. 4.] (5121,)
+(5121, 208, 176)
+40/40 - 6s - loss: 3.9775 - accuracy: 0.6106 - 6s/epoch - 143ms/step
+0.6106333136558533
+
+Process finished with exit code 0
