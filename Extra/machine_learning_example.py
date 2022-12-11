@@ -1,7 +1,6 @@
 import tensorflow as tf
-from tensorflow.keras import datasets, layers, models
-import matplotlib.pyplot as plt
-from pre_processing import *
+from tensorflow.keras import layers, models
+from Scripts.pre_processing import *
 
 
 # (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
