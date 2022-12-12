@@ -1,0 +1,59 @@
+C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\Biomedical-Summative\Scripts\machine_learning_cnn.py
+2022-12-12 00:28:54.901851: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 206, 174, 192)     1920
+
+ max_pooling2d (MaxPooling2D  (None, 103, 87, 192)     0
+ )
+
+ conv2d_1 (Conv2D)           (None, 101, 85, 128)      221312
+
+ max_pooling2d_1 (MaxPooling  (None, 50, 42, 128)      0
+ 2D)
+
+ conv2d_2 (Conv2D)           (None, 48, 40, 64)        73792
+
+ flatten (Flatten)           (None, 122880)            0
+
+ dense (Dense)               (None, 64)                7864384
+
+ dense_1 (Dense)             (None, 4)                 260
+
+=================================================================
+Total params: 8,161,668
+Trainable params: 8,161,668
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+256/256 [==============================] - 248s 967ms/step - loss: 1.0492 - accuracy: 0.4754 - val_loss: 1.0462 - val_accuracy: 0.4999
+Epoch 2/10
+256/256 [==============================] - 237s 926ms/step - loss: 0.9853 - accuracy: 0.5137 - val_loss: 1.0554 - val_accuracy: 0.5007
+Epoch 3/10
+256/256 [==============================] - 226s 885ms/step - loss: 0.7901 - accuracy: 0.6411 - val_loss: 1.0698 - val_accuracy: 0.5212
+Epoch 4/10
+256/256 [==============================] - 237s 927ms/step - loss: 0.3899 - accuracy: 0.8499 - val_loss: 2.2980 - val_accuracy: 0.5407
+Epoch 5/10
+256/256 [==============================] - 253s 990ms/step - loss: 0.1159 - accuracy: 0.9617 - val_loss: 2.0268 - val_accuracy: 0.4605
+Epoch 6/10
+256/256 [==============================] - 284s 1s/step - loss: 0.0395 - accuracy: 0.9906 - val_loss: 3.0741 - val_accuracy: 0.5177
+Epoch 7/10
+256/256 [==============================] - 279s 1s/step - loss: 0.0153 - accuracy: 0.9953 - val_loss: 5.0635 - val_accuracy: 0.5475
+Epoch 8/10
+256/256 [==============================] - 272s 1s/step - loss: 0.0011 - accuracy: 1.0000 - val_loss: 5.3384 - val_accuracy: 0.5581
+Epoch 9/10
+256/256 [==============================] - 270s 1s/step - loss: 2.6631e-04 - accuracy: 1.0000 - val_loss: 5.4295 - val_accuracy: 0.5540
+Epoch 10/10
+256/256 [==============================] - 269s 1s/step - loss: 1.4113e-04 - accuracy: 1.0000 - val_loss: 5.5982 - val_accuracy: 0.5544
+2022-12-12 01:11:50.634472: W tensorflow/tsl/framework/cpu_allocator_impl.cc:82] Allocation of 880902144 exceeds 10% of free system memory.
+2022-12-12 01:11:51.496918: W tensorflow/tsl/framework/cpu_allocator_impl.cc:82] Allocation of 880902144 exceeds 10% of free system memory.
+2022-12-12 01:11:52.366907: W tensorflow/tsl/framework/cpu_allocator_impl.cc:82] Allocation of 880902144 exceeds 10% of free system memory.
+2022-12-12 01:11:53.193935: W tensorflow/tsl/framework/cpu_allocator_impl.cc:82] Allocation of 880902144 exceeds 10% of free system memory.
+2022-12-12 01:11:53.984253: W tensorflow/tsl/framework/cpu_allocator_impl.cc:82] Allocation of 880902144 exceeds 10% of free system memory.
+161/161 - 113s - loss: 5.5982 - accuracy: 0.5544 - 113s/epoch - 701ms/step
+0.5543839335441589
+
+Process finished with exit code 0

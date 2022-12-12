@@ -4,7 +4,6 @@ from pre_processing     import gen_data
 
 # Load datasets
 train_images, test_images, train_labels, test_labels = gen_data()
-x = [train_images, test_images, train_labels, test_labels]
 
 # MODEL - CONVOLUTIONAL LAYERS
 model = models.Sequential()
@@ -23,8 +22,8 @@ model.summary()
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
-history = model.fit(train_images, train_labels, epochs=10,
-                    validation_data=(test_images, test_labels))
+history = model.fit(train_images, train_labels, batch_size=5, epochs=10,
+                    validation_data=(test_images, test_labels),)
 # MODEL - TEST
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 print(test_acc)
