@@ -1,4 +1,5 @@
 # Author: Lee Taylor, ST Number: 190211479
+import  cv2
 import  matplotlib.pyplot   as plt
 import  matplotlib.image    as mpimg
 import  numpy               as np
@@ -53,6 +54,16 @@ def dict_to_nparray(dict_, debug=False):
     if debug: print(npm.shape)
     return npm
 
+def dict_to_nparray_dim(dict_, dim=3, debug=False):
+    npm = np.empty((0, 208, 176, dim))
+    for vec in dict_.values(): # >>> [np.array(208, 176), ...]
+        for i,img in enumerate(vec):
+            img_ = np.array([cv2.merge((img, img, img))])
+            # print(f"npm.shape={npm.shape} img_.shape={img_.shape}")
+            npm = np.append(npm, img_, axis=0)
+    if debug: print(npm.shape)
+    return npm
+
 def images_to_labels(dict_, debug=False):
     labels = np.empty(0)
     for i,arr in enumerate(dict_.values()):
@@ -61,13 +72,17 @@ def images_to_labels(dict_, debug=False):
     if debug: print(labels, labels.shape)
     return labels
 
-def gen_data():
+def gen_data(dim, debug=False):
     test_dict, train_dict = traintest_data(debug=False)
     if len(list(test_dict.values())[0]) == 0: raise ValueError
     train_images   = normalize(train_dict)
     test_images    = normalize(test_dict)
-    train_images   = dict_to_nparray(train_images)
-    test_images    = dict_to_nparray(test_images)
+    if dim == None:
+        train_images   = dict_to_nparray(train_images, debug=debug)
+        test_images    = dict_to_nparray(test_images, debug=debug)
+    else:
+        train_images   = dict_to_nparray_dim(train_images, debug=debug)
+        test_images    = dict_to_nparray_dim(test_images, debug=debug)
     train_labels   = images_to_labels(train_dict)
     test_labels    = images_to_labels(test_dict)
     return train_images, test_images, train_labels, test_labels
