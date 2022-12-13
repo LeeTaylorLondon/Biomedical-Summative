@@ -72,7 +72,18 @@ def images_to_labels(dict_, debug=False):
     if debug: print(labels, labels.shape)
     return labels
 
-def gen_data(dim, debug=False):
+def images_to_labels_dim(dict_, debug=False):
+    labels = np.empty((0, 4))
+    for i,arr in enumerate(dict_.values()):
+    # for i in range(50):
+        temp_labels = np.array([np.zeros(4, dtype=float) for _ in range(len(arr))])
+        print(f"temp_labels.shape = {temp_labels.shape}")
+        for inner_arr in temp_labels: inner_arr[i] = 1.0
+        labels = np.append(labels, temp_labels, axis=0)
+    if debug: print(labels, labels.shape)
+    return labels
+
+def gen_data(dim=None, debug=False):
     test_dict, train_dict = traintest_data(debug=False)
     if len(list(test_dict.values())[0]) == 0: raise ValueError
     train_images   = normalize(train_dict)
@@ -83,10 +94,24 @@ def gen_data(dim, debug=False):
     else:
         train_images   = dict_to_nparray_dim(train_images, debug=debug)
         test_images    = dict_to_nparray_dim(test_images, debug=debug)
-    train_labels   = images_to_labels(train_dict)
-    test_labels    = images_to_labels(test_dict)
+    train_labels   = images_to_labels_dim(train_dict)
+    test_labels    = images_to_labels_dim(test_dict)
     return train_images, test_images, train_labels, test_labels
 
+def gen_data_fake(dim, debug=True):
+    # train_images, test_images, train_labels, test_labels
+    # train_images.shape = (1279, 208, 176, 3)
+    test_dict_, train_dict_ = traintest_data(debug=False)
+    x_train = np.ones(shape=(50, 208, 176, 3))
+    # y_train = np.ones(shape=(50, 4))
+    y_train = images_to_labels_dim(train_dict_)
+    x_test  = np.ones(shape=(25, 208, 176, 3))
+    # y_test  = np.ones(shape=(25, 4))
+    y_test   = images_to_labels_dim(test_dict_)
+    datasets = [x_train, y_train, x_test, y_test]
+    if debug:
+        for dataset in datasets: print(dataset.shape)
+    return x_train, y_train, x_test, y_test
 
 if __name__ == '__main__':
     # # Generate train & test data

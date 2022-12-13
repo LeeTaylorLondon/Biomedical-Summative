@@ -5,10 +5,10 @@ import  sklearn.metrics  as metrics
 import  numpy            as np
 from    matplotlib                          import pyplot as plt
 from    tensorflow.keras.applications.vgg16 import VGG16
-from    tensorflow.keras                    import models
 from    tensorflow.keras.optimizers         import Adamax, SGD
-from    pre_processing                      import gen_data
 from    tensorflow.keras.layers             import Dense, Dropout, Flatten, BatchNormalization, GlobalAveragePooling2D
+from    tensorflow.keras                    import models
+from    pre_processing                      import gen_data, gen_data_fake
 
 
 def create_model(input_shape, opt=Adamax(), num_classes=4):
@@ -17,7 +17,7 @@ def create_model(input_shape, opt=Adamax(), num_classes=4):
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
     # let's add a fully-connected layer
-    x = Dense(4096, activation='relu')(x)
+    x = Dense(1024, activation='relu')(x)
     # and a logistic layer -- let's say we have 200 classes
     predictions = Dense(num_classes, activation='softmax')(x)
     model = models.Model(inputs=base_model.input, outputs=predictions)
@@ -28,9 +28,11 @@ def create_model(input_shape, opt=Adamax(), num_classes=4):
     # model.summary()
     return model
 
-def traintest_model(model, batch_size=32, epochs=3):
+def traintest_model(model, x_train, y_train, x_test, y_test,
+                    batch_size=2, epochs=3):
     start = time.time() # Start timer
     # Train model
+    print(x_train.shape, y_train.shape)
     history = model.fit(x_train, y_train,
                         batch_size=batch_size,
                         epochs=epochs,
@@ -41,13 +43,20 @@ def traintest_model(model, batch_size=32, epochs=3):
 
 if __name__ == '__main__':
     m_vgg = create_model((208, 176, 3))
+    print(f">>> Created model")
 
-    train_images, test_images, train_labels, test_labels = gen_data(dim=3, debug=True)
-    x_train, y_train, x_test, y_test = train_images, train_labels, test_images, test_labels
+    # train_images, test_images, train_labels, test_labels = gen_data(dim=3, debug=True)
+    train_images, train_labels, test_images, test_labels = gen_data_fake(dim=3, debug=True)
+    x_train_, y_train_, x_test_, y_test_ = train_images, train_labels, test_images, test_labels
+    print(f">>> Created train & test data")
 
-    y_test = np.asarray(test_labels).astype('float32').reshape((-1, 1))
+    # y_train_ = np.asarray(train_labels).astype('float32').reshape((-1, 1))
+    # y_test_ = np.asarray(test_labels).astype('float32').reshape((-1, 1))
+    print(f">>> Reshaped label data")
 
-    print(f"{x_train.shape}, {x_test.shape}")
-    print(f"{x_train.shape}, {x_test.shape}")
+    print(f"{x_train_.shape}, {x_test_.shape}")
+    print(f"{x_train_.shape}, {x_test_.shape}")
+    print(f">>> Dataset shapes ^")
 
-    traintest_model(m_vgg)
+    print(f">>> Train-testing model")
+    traintest_model(m_vgg, x_train_, y_train_, x_test_, y_test_)
