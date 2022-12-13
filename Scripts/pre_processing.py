@@ -60,6 +60,7 @@ def dict_to_nparray_dim(dict_, dim=3, debug=False):
     for j,vec in enumerate(dict_.values()): # >>> [np.array(208, 176), ...]
         print(f"dict_.values()[{j+1}] out of [4]")
         for i,img in enumerate(vec):
+            print(f"d_t_npa_dim(...)-> img:{i}")
             img_ = np.array([cv2.merge((img, img, img))])
             # print(f"npm.shape={npm.shape} img_.shape={img_.shape}")
             npm = np.append(npm, img_, axis=0)
