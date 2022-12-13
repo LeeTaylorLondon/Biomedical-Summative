@@ -42,11 +42,13 @@ def traintest_model(model, x_train, y_train, x_test, y_test,
 
 
 if __name__ == '__main__':
+    ''' To achieve fast testing of different hyper-parameters this program 
+    must be ran in the console, therefore gen_data(...) does not need to be re-ran. '''
     m_vgg = create_model((208, 176, 3))
     print(f">>> Created model")
 
-    # train_images, test_images, train_labels, test_labels = gen_data(dim=3, debug=True)
-    train_images, train_labels, test_images, test_labels = gen_data_fake(dim=3, debug=True)
+    train_images, train_labels, test_labels, test_labels = gen_data(dim=3, debug=True)
+    # train_images, train_labels, test_images, test_labels = gen_data_fake(dim=3, debug=True)
     x_train_, y_train_, x_test_, y_test_ = train_images, train_labels, test_images, test_labels
     print(f">>> Created train & test data")
 
