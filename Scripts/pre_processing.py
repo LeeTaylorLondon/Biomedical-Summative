@@ -57,7 +57,8 @@ def dict_to_nparray(dict_, debug=False):
 
 def dict_to_nparray_dim(dict_, dim=3, debug=False):
     npm = np.empty((0, 208, 176, dim))
-    for vec in dict_.values(): # >>> [np.array(208, 176), ...]
+    for j,vec in enumerate(dict_.values()): # >>> [np.array(208, 176), ...]
+        print(f"dict_.values()[{j+1}] out of [4]")
         for i,img in enumerate(vec):
             img_ = np.array([cv2.merge((img, img, img))])
             # print(f"npm.shape={npm.shape} img_.shape={img_.shape}")
@@ -98,12 +99,22 @@ def gen_data(dim=None, debug=False):
         train_images   = dict_to_nparray(train_images, debug=debug)
         test_images    = dict_to_nparray(test_images, debug=debug)
     else:
+
         timer = time.time()
         train_images   = dict_to_nparray_dim(train_images, debug=debug)
-        print(f"d_to_nparr(): {time.time() - timer}s")
+        print(f"d_to_nparr(train): {time.time() - timer}s")
+
+        timer = time.time()
         test_images    = dict_to_nparray_dim(test_images, debug=debug)
-    train_labels   = images_to_labels_dim(train_dict)
-    test_labels    = images_to_labels_dim(test_dict)
+        print(f"d_to_nparr(test): {time.time() - timer}s")
+
+    timer = time.time()
+    train_labels = images_to_labels_dim(train_dict)
+    print(f"i_to_l(train): {time.time() - timer}s")
+
+    timer = time.time()
+    test_labels = images_to_labels_dim(test_dict)
+    print(f"i_to_l(train): {time.time() - timer}s")
     return train_images, test_images, train_labels, test_labels
 
 
