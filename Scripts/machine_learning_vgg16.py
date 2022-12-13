@@ -8,7 +8,7 @@ from    tensorflow.keras.applications.vgg16 import VGG16
 from    tensorflow.keras.optimizers         import Adamax, SGD
 from    tensorflow.keras.layers             import Dense, Dropout, Flatten, BatchNormalization, GlobalAveragePooling2D
 from    tensorflow.keras                    import models
-from    pre_processing                      import gen_data, gen_data_fake
+from    pre_processing                      import gen_data
 
 
 def create_model(input_shape, opt=Adamax(), num_classes=4):
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     m_vgg = create_model((208, 176, 3))
     print(f">>> Created model")
 
-    train_images, train_labels, test_labels, test_labels = gen_data(dim=3, debug=True)
+    train_images, train_labels, train_labels, test_labels = gen_data(dim=3, debug=True)
     # train_images, train_labels, test_images, test_labels = gen_data_fake(dim=3, debug=True)
     x_train_, y_train_, x_test_, y_test_ = train_images, train_labels, test_images, test_labels
     print(f">>> Created train & test data")

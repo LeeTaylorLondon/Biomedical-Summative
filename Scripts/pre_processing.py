@@ -5,6 +5,7 @@ import  matplotlib.image    as mpimg
 import  numpy               as np
 from    os                  import walk
 from    typing              import List
+import  time
 
 
 # img = mpimg.imread('Data/images/test/mild/26.jpg')
@@ -84,34 +85,27 @@ def images_to_labels_dim(dict_, debug=False):
     return labels
 
 def gen_data(dim=None, debug=False):
+    timer = time.time()
     test_dict, train_dict = traintest_data(debug=False)
+    print(f"traintest_data(): {time.time() - timer}s")
+
+    timer = time.time()
     if len(list(test_dict.values())[0]) == 0: raise ValueError
     train_images   = normalize(train_dict)
     test_images    = normalize(test_dict)
+    print(f"normalization(): {time.time() - timer}s")
     if dim == None:
         train_images   = dict_to_nparray(train_images, debug=debug)
         test_images    = dict_to_nparray(test_images, debug=debug)
     else:
+        timer = time.time()
         train_images   = dict_to_nparray_dim(train_images, debug=debug)
+        print(f"d_to_nparr(): {time.time() - timer}s")
         test_images    = dict_to_nparray_dim(test_images, debug=debug)
     train_labels   = images_to_labels_dim(train_dict)
     test_labels    = images_to_labels_dim(test_dict)
     return train_images, test_images, train_labels, test_labels
 
-def gen_data_fake(dim, debug=True):
-    # train_images, test_images, train_labels, test_labels
-    # train_images.shape = (1279, 208, 176, 3)
-    test_dict_, train_dict_ = traintest_data(debug=False)
-    x_train = np.ones(shape=(50, 208, 176, 3))
-    # y_train = np.ones(shape=(50, 4))
-    y_train = images_to_labels_dim(train_dict_)
-    x_test  = np.ones(shape=(25, 208, 176, 3))
-    # y_test  = np.ones(shape=(25, 4))
-    y_test   = images_to_labels_dim(test_dict_)
-    datasets = [x_train, y_train, x_test, y_test]
-    if debug:
-        for dataset in datasets: print(dataset.shape)
-    return x_train, y_train, x_test, y_test
 
 if __name__ == '__main__':
     # # Generate train & test data
@@ -129,6 +123,21 @@ if __name__ == '__main__':
     test_labels  = images_to_labels(test_dict_, debug=True)
     train_images = dict_to_nparray(train_dict_, debug=True)
     train_labels = images_to_labels(train_dict_, debug=True)
+
+    # def gen_data_fake(dim, debug=True):
+    #     # train_images, test_images, train_labels, test_labels
+    #     # train_images.shape = (1279, 208, 176, 3)
+    #     test_dict_, train_dict_ = traintest_data(debug=False)
+    #     x_train = np.ones(shape=(50, 208, 176, 3))
+    #     # y_train = np.ones(shape=(50, 4))
+    #     y_train = images_to_labels_dim(train_dict_)
+    #     x_test = np.ones(shape=(25, 208, 176, 3))
+    #     # y_test  = np.ones(shape=(25, 4))
+    #     y_test = images_to_labels_dim(test_dict_)
+    #     datasets = [x_train, y_train, x_test, y_test]
+    #     if debug:
+    #         for dataset in datasets: print(dataset.shape)
+    #     return x_train, y_train, x_test, y_test
 
 
 
