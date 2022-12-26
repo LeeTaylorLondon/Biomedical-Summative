@@ -1,11 +1,13 @@
 # Author: Lee Taylor, ST Number: 190211479
 import  cv2
+import  time
+import  pickle
+import  gzip
 import  matplotlib.pyplot   as plt
 import  matplotlib.image    as mpimg
 import  numpy               as np
 from    os                  import walk
 from    typing              import List
-import  time
 
 
 # img = mpimg.imread('Data/images/test/mild/26.jpg')
@@ -76,6 +78,7 @@ def images_to_labels(dict_, debug=False):
     return labels
 
 def images_to_labels_dim(dict_, debug=False):
+    """  """
     labels = np.empty((0, 4))
     for i,arr in enumerate(dict_.values()):
     # for i in range(50):
@@ -118,23 +121,90 @@ def gen_data(dim=None, debug=False):
     print(f"i_to_l(train): {time.time() - timer}s")
     return train_images, test_images, train_labels, test_labels
 
+def save_nparrays(datasets_):
+    for d in dataset_:
+        np.save('array.np', )
+    pass
+
+def read_nparrays():
+    dir_, rv = '../Data/pre_pro/', []
+    files    = ['train_images', 'train_labels', 'test_images', 'test_labels']
+    for file in files: rv.append(np.load(f"{dir_+file}.npy"))
+    return rv
+    # nparrays = [np.load(dir_ + fn) for fn in files]
+    # return [np.load(dir_ + fn) for fn in files]
+
+def to_pk1gz(obj=None, fd=None):
+    # Create an object to serialize
+    if obj == None: obj = {'a': 1, 'b': 2, 'c': 3}
+    if fd  == None: fd  = 'obj.pk1.gz'
+    # Open a .pk1.gz file in write mode
+    with gzip.open(fd, 'wb') as f:
+        # Serialize the object and write it to the file
+        pickle.dump(obj, f)
+    print(f"function to_pk1gz(...) finished!")
+
+def from_pk1gz(fd=None, debug=False):
+    if fd == None: fd = 'obj.pk1.gz'
+    # Open the .pk1.gz file in read mode
+    with gzip.open(fd, 'rb') as f:
+      # Load the data from the file and deserialize it
+      obj = pickle.load(f)
+    if debug: print(f"from_pk1gz(...) -> {obj}")
+    return obj
 
 if __name__ == '__main__':
+    """ Create .npz files of the arrays to be read
+     *Create 1 channel arrays
+     *Create 3 channel arrays
+    """
+    # # Create train and test dictionaries
+    # train_dict, test_dict = traintest_data(debug=False)
+    # train_dict, test_dict = normalize(train_dict), normalize(test_dict)
+    # # Create train and test labels (1 dimensional)
+    # train_labels = images_to_labels(train_dict)
+    # test_labels  = images_to_labels(test_dict)
+    # # Convert X dictionaries to nparrays
+    # train_images = dict_to_nparray(train_dict)
+    # test_images  = dict_to_nparray(test_dict)
+    #
+    # # Create container for datasets
+    # # X_train, y_train, X_test, y_test
+    # data = {"train_images": train_images, "train_labels": train_labels,
+    #         "test_images": test_images, "test_labels": test_labels}
+    # # Test pk1gz functionality
+    # to_pk1gz(data, "../Data/1d.pk1.gz")
+    # from_pk1gz("../Data/1d.pk1.gz")
+    #
+    # Load 3 channel data from numpy array files
+    test_images_, test_labels_, train_images_, train_labels_ = read_nparrays()
+    # Create container for datasets (3 channels)
+    data3 = {"train_images": train_images_, "train_labels": train_labels_,
+             "test_images": test_images_, "test_labels": test_labels_}
+    # Test pk1gz functionality
+    to_pk1gz(data3, "../Data/3d.pk1.gz")
+    from_pk1gz("../Data/3d.pk1.gz")
+
+    """ General testing """
+    # arrays = read_nparray()
+    # for arr in arrays: print(arr)
+
     # # Generate train & test data
     # test_dict, train_dict = traintest_data()
     # normalize(test_dict)
     # train_images, test_images, labels = arrayify()
 
     ## Test loading, normalizing, and plotting image data
-    test_dict_, train_dict_ = traintest_data(debug=False)
-    normalize(test_dict_)
-    normalize(train_dict_)
-
-    # Test functions
-    test_images  = dict_to_nparray(test_dict_, debug=True)
-    test_labels  = images_to_labels(test_dict_, debug=True)
-    train_images = dict_to_nparray(train_dict_, debug=True)
-    train_labels = images_to_labels(train_dict_, debug=True)
+    # test_dict_, train_dict_ = traintest_data(debug=False)
+    # print(test_dict_, train_dict_)
+    # normalize(test_dict_)
+    # normalize(train_dict_)
+    #
+    # # Test functions
+    # test_images  = dict_to_nparray(test_dict_, debug=True)
+    # test_labels  = images_to_labels(test_dict_, debug=True)
+    # train_images = dict_to_nparray(train_dict_, debug=True)
+    # train_labels = images_to_labels(train_dict_, debug=True)
 
     # def gen_data_fake(dim, debug=True):
     #     # train_images, test_images, train_labels, test_labels

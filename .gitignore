@@ -1,5 +1,19 @@
+/.idea
+
 /Data/Original/
+/Data/pre_pro/
+/Data/test/
+/Data/train/
+
+/Data/1d.pk1.gz
+/Data/3d.pk1.gz
+/Data/description.txt
+
 /Ignored/Extra/
 /Ignored/Spec. Docs/
 /Ignored/
-/.idea
+/CSC3432.txt
+
+/Scripts/Experimental/
+
+CSC3432.txt
