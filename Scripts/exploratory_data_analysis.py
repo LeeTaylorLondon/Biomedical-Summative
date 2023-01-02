@@ -37,7 +37,7 @@ def plot_imgs():
     ax = ax.flatten()
     # Iterate over the selected images and labels and plot them
     for i, (image, label) in enumerate(zip(all_images, all_labels)):
-        ax[i].imshow(image)
+        ax[i].imshow(image, aspect="auto")
         # ax[i].set_title(label)
         ax[i].axis('off')
     # Show the plot
@@ -125,10 +125,9 @@ def std_():
 
 
 if __name__ == '__main__':
-    # plot_imgs()
-    # histogram()
-    # boxplot()
-    # cls_distribution()
-    # averages()
-    # std_()
-    pass
+    plot_imgs()
+    histogram()
+    boxplot()
+    cls_distribution()
+    averages()
+    std_()

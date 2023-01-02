@@ -8,6 +8,7 @@ import  matplotlib.image    as mpimg
 import  numpy               as np
 from    os                  import walk
 from    typing              import List
+from    sklearn.utils       import shuffle
 
 
 # img = mpimg.imread('Data/images/test/mild/26.jpg')
@@ -16,6 +17,8 @@ from    typing              import List
 # filenames = next(walk('Data/images/test/mild'), (None, None, []))[2]  # [] if no file
 # print(filenames)
 # >>> ['26.jpg', '26_19.jpg', '26_20.jpg', '26_21.jpg', '26_22.jpg', ..., '32_9.jpg']
+
+np.random.seed(42)
 
 def pltimg(i):
     plt.imshow(i)
@@ -144,6 +147,14 @@ def to_pk1gz(obj=None, fd=None):
         pickle.dump(obj, f)
     print(f"function to_pk1gz(...) finished!")
 
+def shuffle_(dict_):
+    # Shuffle the training set
+    x_train, y_train = shuffle(dict_['train_images'], dict_['train_labels'], random_state=42)
+    # Shuffle the test set
+    x_test, y_test = shuffle(dict_['test_images'], dict_['test_labels'], random_state=42)
+    del dict_
+    return x_train, y_train, x_test, y_test
+
 def from_pk1gz(fd=None, debug=False):
     if fd == None: fd = 'obj.pk1.gz'
     # Open the .pk1.gz file in read mode
@@ -151,7 +162,8 @@ def from_pk1gz(fd=None, debug=False):
       # Load the data from the file and deserialize it
       obj = pickle.load(f)
     if debug: print(f"from_pk1gz(...) -> {obj}")
-    return obj
+    # Returns tuple = (x_train, y_train, x_test, y_test)
+    return shuffle_(obj)
 
 if __name__ == '__main__':
     """ Create .npz files of the arrays to be read

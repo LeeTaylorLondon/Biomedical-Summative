@@ -1,5 +1,7 @@
 /.idea
 
+/CUDA
+
 /Data/Original/
 /Data/pre_pro/
 /Data/test/

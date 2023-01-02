@@ -1,0 +1,1164 @@
+C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\Biomedical-Summative\Scripts\basic_CNN.py
+2023-01-01 11:11:51.276711: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2023-01-01 11:11:51.277224: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2023-01-01 11:11:51.282938: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.525483
+Testing Accuracy:  0.5715402364730835
+Training Loss: 0.991612
+Testing Loss:  0.9645264744758606
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+2023-01-01 11:12:13.308937: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 550563840 exceeds 10% of free system memory.
+2023-01-01 11:12:14.513434: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 550563840 exceeds 10% of free system memory.
+2023-01-01 11:12:14.937844: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 550563840 exceeds 10% of free system memory.
+2023-01-01 11:12:16.062938: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 550563840 exceeds 10% of free system memory.
+2023-01-01 11:12:16.501426: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 550563840 exceeds 10% of free system memory.
+Training Accuracy: 0.494825
+Testing Accuracy:  0.528537929058075
+Training Loss: 1.188848
+Testing Loss:  1.0246152877807617
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.767819
+Testing Accuracy:  0.5269742012023926
+Training Loss: 0.620707
+Testing Loss:  1.1243162155151367
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.752783
+Testing Accuracy:  0.5261923670768738
+Training Loss: 0.621684
+Testing Loss:  1.8477253913879395
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.455966
+Testing Accuracy:  0.45738857984542847
+Training Loss: 1.419565
+Testing Loss:  1.0487042665481567
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.528608
+Testing Accuracy:  0.5566849112510681
+Training Loss: 1.125741
+Testing Loss:  0.9790201187133789
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.823667
+Testing Accuracy:  0.5605942010879517
+Training Loss: 0.490627
+Testing Loss:  1.322508454322815
+
+learning_rate      = 0.001
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.681508
+Testing Accuracy:  0.5152462720870972
+Training Loss: 0.741462
+Testing Loss:  1.3724846839904785
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.496778
+Testing Accuracy:  0.5590304732322693
+Training Loss: 1.029332
+Testing Loss:  0.9950979948043823
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.479984
+Testing Accuracy:  0.5089914202690125
+Training Loss: 1.103729
+Testing Loss:  1.0007721185684204
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.834212
+Testing Accuracy:  0.512900710105896
+Training Loss: 0.441643
+Testing Loss:  2.374476671218872
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.669986
+Testing Accuracy:  0.5832681655883789
+Training Loss: 0.761632
+Testing Loss:  1.09152090549469
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.489553
+Testing Accuracy:  0.5222830176353455
+Training Loss: 1.062221
+Testing Loss:  1.0078052282333374
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.479008
+Testing Accuracy:  0.512900710105896
+Training Loss: 1.130447
+Testing Loss:  0.9991153478622437
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.940832
+Testing Accuracy:  0.5738858580589294
+Training Loss: 0.184134
+Testing Loss:  1.503772497177124
+
+learning_rate      = 0.001
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.709627
+Testing Accuracy:  0.538702130317688
+Training Loss: 0.71204
+Testing Loss:  1.2770134210586548
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.522945
+Testing Accuracy:  0.5144644379615784
+Training Loss: 0.998374
+Testing Loss:  1.097477912902832
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.487795
+Testing Accuracy:  0.5269742012023926
+Training Loss: 1.16932
+Testing Loss:  0.991392970085144
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.83968
+Testing Accuracy:  0.5715402364730835
+Training Loss: 0.412473
+Testing Loss:  1.4058074951171875
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.765671
+Testing Accuracy:  0.4878811538219452
+Training Loss: 0.549391
+Testing Loss:  1.6112691164016724
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.489162
+Testing Accuracy:  0.5058639645576477
+Training Loss: 1.031492
+Testing Loss:  1.0748096704483032
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.475103
+Testing Accuracy:  0.36825644969940186
+Training Loss: 1.145409
+Testing Loss:  1.037474274635315
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.826206
+Testing Accuracy:  0.5441751480102539
+Training Loss: 0.460614
+Testing Loss:  1.3085994720458984
+
+learning_rate      = 0.001
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.653583
+Testing Accuracy:  0.5183737277984619
+Training Loss: 0.831175
+Testing Loss:  1.360884428024292
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.49092
+Testing Accuracy:  0.5207192897796631
+Training Loss: 1.085218
+Testing Loss:  0.9832224249839783
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.474712
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.255274
+Testing Loss:  1.008175015449524
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.827182
+Testing Accuracy:  0.5183737277984619
+Training Loss: 0.461586
+Testing Loss:  1.556574821472168
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.752978
+Testing Accuracy:  0.5207192897796631
+Training Loss: 0.605387
+Testing Loss:  1.8257559537887573
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.453427
+Testing Accuracy:  0.5113369822502136
+Training Loss: 1.645063
+Testing Loss:  1.0119303464889526
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.479984
+Testing Accuracy:  0.502736508846283
+Training Loss: 1.320734
+Testing Loss:  1.018385887145996
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.752197
+Testing Accuracy:  0.5269742012023926
+Training Loss: 0.605911
+Testing Loss:  1.5103635787963867
+
+learning_rate      = 0.002
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.774458
+Testing Accuracy:  0.5254104733467102
+Training Loss: 0.577774
+Testing Loss:  2.0957608222961426
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.478422
+Testing Accuracy:  0.5113369822502136
+Training Loss: 1.163651
+Testing Loss:  0.9847413301467896
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.494435
+Testing Accuracy:  0.5215011835098267
+Training Loss: 1.512241
+Testing Loss:  1.0067585706710815
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.70123
+Testing Accuracy:  0.5050820708274841
+Training Loss: 0.754418
+Testing Loss:  1.8289132118225098
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.655341
+Testing Accuracy:  0.5379202365875244
+Training Loss: 0.792623
+Testing Loss:  1.2739827632904053
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.481742
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.177328
+Testing Loss:  1.0145595073699951
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.474126
+Testing Accuracy:  0.5136825442314148
+Training Loss: 1.418876
+Testing Loss:  1.0014698505401611
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.618043
+Testing Accuracy:  0.5316653847694397
+Training Loss: 0.848685
+Testing Loss:  1.324057698249817
+
+learning_rate      = 0.002
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.809022
+Testing Accuracy:  0.4792806804180145
+Training Loss: 0.48328
+Testing Loss:  1.9318327903747559
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.489162
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.620977
+Testing Loss:  1.0243257284164429
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.461629
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.60505
+Testing Loss:  1.0138421058654785
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.714509
+Testing Accuracy:  0.5480844378471375
+Training Loss: 0.678698
+Testing Loss:  1.3827017545700073
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.617653
+Testing Accuracy:  0.5175918936729431
+Training Loss: 0.835968
+Testing Loss:  1.0112179517745972
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.465534
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.079432
+Testing Loss:  1.0204317569732666
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.483304
+Testing Accuracy:  0.5089914202690125
+Training Loss: 1.380303
+Testing Loss:  1.0075801610946655
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.961922
+Testing Accuracy:  0.5910868048667908
+Training Loss: 0.115467
+Testing Loss:  1.6563246250152588
+
+learning_rate      = 0.002
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.563171
+Testing Accuracy:  0.5011727809906006
+Training Loss: 0.947881
+Testing Loss:  1.4369440078735352
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.46241
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.383793
+Testing Loss:  1.0158586502075195
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.476079
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.428649
+Testing Loss:  1.0067964792251587
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.634642
+Testing Accuracy:  0.5535574555397034
+Training Loss: 0.809233
+Testing Loss:  1.322030782699585
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.570201
+Testing Accuracy:  0.512900710105896
+Training Loss: 0.909146
+Testing Loss:  1.315463900566101
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.485647
+Testing Accuracy:  0.5183737277984619
+Training Loss: 2.014493
+Testing Loss:  0.9806289076805115
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.465339
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.798213
+Testing Loss:  1.0919291973114014
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.841828
+Testing Accuracy:  0.6309617161750793
+Training Loss: 0.397109
+Testing Loss:  1.333054542541504
+
+learning_rate      = 0.003
+filter_size        = (3, 3)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.851787
+Testing Accuracy:  0.502736508846283
+Training Loss: 0.364499
+Testing Loss:  1.5764473676681519
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.444054
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.578819
+Testing Loss:  1.1180126667022705
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.468854
+Testing Accuracy:  0.5215011835098267
+Training Loss: 1.359881
+Testing Loss:  1.0027936697006226
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.896114
+Testing Accuracy:  0.49022674560546875
+Training Loss: 0.269553
+Testing Loss:  2.1033830642700195
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.605546
+Testing Accuracy:  0.5770133137702942
+Training Loss: 0.884831
+Testing Loss:  0.9114335775375366
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.504198
+Testing Accuracy:  0.5371384024620056
+Training Loss: 1.28669
+Testing Loss:  1.0035213232040405
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.459481
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.375978
+Testing Loss:  1.036941647529602
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.953134
+Testing Accuracy:  0.5535574555397034
+Training Loss: 0.137356
+Testing Loss:  1.8165589570999146
+
+learning_rate      = 0.003
+filter_size        = (4, 4)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.499902
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.041267
+Testing Loss:  1.0333287715911865
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.495411
+Testing Accuracy:  0.5003909468650818
+Training Loss: 1.104184
+Testing Loss:  1.006163477897644
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.482718
+Testing Accuracy:  0.5457388758659363
+Training Loss: 1.699956
+Testing Loss:  0.9928927421569824
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.784027
+Testing Accuracy:  0.5371384024620056
+Training Loss: 0.623801
+Testing Loss:  1.6784096956253052
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.average_pooling2d.AveragePooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.577231
+Testing Accuracy:  0.5035184025764465
+Training Loss: 0.888281
+Testing Loss:  1.242660403251648
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.499707
+Testing Accuracy:  0.5496481657028198
+Training Loss: 1.197652
+Testing Loss:  0.9749197363853455
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 1
+Training model...
+Training Accuracy: 0.490529
+Testing Accuracy:  0.4112587869167328
+Training Loss: 2.991536
+Testing Loss:  1.0431228876113892
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [6, 16]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.732279
+Testing Accuracy:  0.5238467454910278
+Training Loss: 0.633125
+Testing Loss:  1.4816930294036865
+
+learning_rate      = 0.003
+filter_size        = (5, 5)
+subsampling_layer  = <class 'keras.layers.pooling.max_pooling2d.MaxPooling2D'>
+layers             = 2
+filters            = [30, 50]
+activation         = relu
+d_layers           = 2
+units              = [120, 84]
+batch_size         = 128
+epochs             = 5
+Training model...
+Training Accuracy: 0.699473
+Testing Accuracy:  0.4683346450328827
+Training Loss: 0.715077
+Testing Loss:  1.5373785495758057
+
+Process finished with exit code 0
